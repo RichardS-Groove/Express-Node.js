@@ -5,7 +5,8 @@ const { infoCursos } = require("./datos/cursos.js");
 
 // Routers
 
-//app.use("/api/cursos/programacion", routerProgramacion);
+const routerProgramacion = require("./routers/programacion.js");
+app.use("/api/cursos/programacion", routerProgramacion);
 
 const routerMatematicas = require("./routers/matematicas.js");
 app.use("/api/cursos/matematicas", routerMatematicas);
@@ -18,8 +19,6 @@ app.get("/", (req, res) => {
 app.get("/api/cursos", (req, res) => {
   res.send(JSON.stringify(infoCursos));
 });
-
-
 
 //Programación
 
